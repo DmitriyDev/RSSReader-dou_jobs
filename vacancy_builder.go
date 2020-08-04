@@ -65,5 +65,10 @@ func (vb VacancyBuilder) parseTitle(baseTitle string) (string, string, string, [
 		data = data[1:]
 	}
 
-	return title, company, salary, data
+	cities := []string{}
+	for _, city := range data {
+		cities = append(cities, strings.TrimSpace(city))
+	}
+
+	return title, company, salary, cities
 }
